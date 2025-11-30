@@ -1,0 +1,24 @@
+{
+  "name": "hark-hearing-aid-relay-kit",
+  "version": "1.0.0",
+  "description": "Website for HARK - Hearing Aid Relay Kit DCOM Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "hearing-aid",
+    "assistive-technology",
+    "android",
+    "asha",
+    "accessibility"
+  ],
+  "author": "Manus AI - DCOM Project",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

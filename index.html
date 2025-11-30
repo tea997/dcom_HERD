@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARK - Hearing Aid Relay Kit</title>
+    <meta name="description" content="HARK - Hearing Aid Relay Kit: Transform your smartphone into a portable table microphone for hearing aid users">
+    <meta name="keywords" content="hearing aid, assistive technology, Android, ASHA, accessibility, low-latency audio">
+    <meta name="author" content="Manus AI - DCOM Project">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔊</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fa-solid fa-ear-listen"></i>
+                    <span>HARK</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#technical">Technical</a></li>
+                    <li><a href="#workflow">Workflow</a></li>
+                    <li><a href="#future">Future Work</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <h1 class="hero-title">HARK - Hearing Aid Relay Kit</h1>
+                <p class="hero-subtitle">Transforming smartphones into portable, high-quality table microphones for hearing aid users</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fa-solid fa-microphone"></i>
+                        <span>Low-Latency Audio</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>Android Compatible</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fa-solid fa-bluetooth"></i>
+                        <span>ASHA Protocol</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview" class="section">
+            <div class="container">
+                <h2 class="section-title">Executive Summary</h2>
+                <p class="lead-text">The HARK (Hearing Aid Relay Kit) project successfully developed a specialized Android application that transforms a standard smartphone into a high-quality, low-latency, portable table microphone for hearing aid users. This solution directly addresses the significant barrier of cost and inconvenience associated with proprietary hardware accessories.</p>
+
+                <h3>Project Description</h3>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Problem Statement</h4>
+                        <p>Individuals with hearing impairments frequently encounter difficulties in environments with high background noise. Proprietary "table microphones" or "remote microphones" cost several hundred dollars and add inconvenience to daily routines.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h4><i class="fa-solid fa-lightbulb"></i> Solution</h4>
+                        <p>HARK provides an elegant solution by utilizing the powerful, ubiquitous hardware already owned by the user—their Android smartphone. It leverages the ASHA protocol, a standard feature in modern Android and hearing aid devices.</p>
+                    </div>
+                    <div class="overview-card">
+                        <h4><i class="fa-solid fa-star"></i> Key Features</h4>
+                        <ul>
+                            <li>Real-time, low-latency audio streaming</li>
+                            <li>Optimized Bluetooth ASHA support</li>
+                            <li>Background operation as Foreground Service</li>
+                            <li>Customizable settings with gain adjustment</li>
+                            <li>Hearing aid priority compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technical" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Technical Implementation</h2>
+
+                <h3>Core Android Technologies</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fa-brands fa-android"></i>
+                        <h4>Kotlin</h4>
+                        <p>Primary language for modern features, null safety, and conciseness.</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-solid fa-wave-square"></i>
+                        <h4>Audio APIs</h4>
+                        <p>AudioRecord & AudioTrack for direct low-level audio hardware access.</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-solid fa-server"></i>
+                        <h4>Foreground Service</h4>
+                        <p>Maintains audio stream even when app is not in foreground.</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h4>ASHA Protocol</h4>
+                        <p>Routs audio to hearing aids via optimized Bluetooth Low Energy.</p>
+                    </div>
+                </div>
+
+                <h3>Architecture</h3>
+                <p>The application employs the Model-View-ViewModel (MVVM) architectural pattern with Jetpack Compose UI framework and Material Design accessibility standards.</p>
+
+                <div class="architecture-diagram">
+                    <h4>System Architecture Flow</h4>
+                    <div class="diagram">
+                        <div class="component">User Interface (Jetpack Compose)</div>
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <div class="component">AudioStreamingService</div>
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <div class="component">Android OS Audio Mixer</div>
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <div class="component">Bluetooth LE (ASHA)</div>
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <div class="component">Hearing Aid Device</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="workflow" class="section">
+            <div class="container">
+                <h2 class="section-title">Detailed Workflow</h2>
+
+                <h3>Application Flow</h3>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Initialization Phase</h4>
+                        <ul>
+                            <li>MainActivity handles setup and permissions</li>
+                            <li>UserPreferencesRepository loads settings from DataStore</li>
+                            <li>Bluetooth and audio permissions requested</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Streaming Activation</h4>
+                        <ul>
+                            <li>User initiates streaming via UI button</li>
+                            <li>Intent starts AudioStreamingService</li>
+                            <li>Service promoted to foreground</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Core Execution</h4>
+                        <ul>
+                            <li>High-priority thread captures audio</li>
+                            <li>Gain adjustment applied to buffer</li>
+                            <li>Audio routed to hearing aids via ASHA</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Termination</h4>
+                        <ul>
+                            <li>Resources cleaned up when stopped</li>
+                            <li>Service terminates gracefully</li>
+                            <li>WakeLock and audio objects released</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Audio Pipeline</h3>
+                <p>The audio pipeline is optimized for minimal latency with input capture at 48kHz, gain adjustment processing, and output using PERFORMANCE_MODE_LOW_LATENCY with ACCESSIBILITY usage flags.</p>
+            </div>
+        </section>
+
+        <section id="future" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Future Work & Recommendations</h2>
+
+                <div class="future-grid">
+                    <div class="future-item">
+                        <i class="fa-solid fa-filter"></i>
+                        <h4>Advanced Audio Processing</h4>
+                        <ul>
+                            <li>Noise reduction algorithms</li>
+                            <li>Directional audio capture</li>
+                            <li>Dynamic equalization</li>
+                        </ul>
+                    </div>
+                    <div class="future-item">
+                        <i class="fa-solid fa-mobile"></i>
+                        <h4>Cross-Platform Expansion</h4>
+                        <ul>
+                            <li>iOS implementation with MFi protocol</li>
+                            <li>Wearable companion app</li>
+                            <li>Web-based interface</li>
+                        </ul>
+                    </div>
+                    <div class="future-item">
+                        <i class="fa-solid fa-users"></i>
+                        <h4>User Feedback Integration</h4>
+                        <ul>
+                            <li>Latency measurement tools</li>
+                            <li>Battery usage profiling</li>
+                            <li>Beta testing program</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="section">
+            <div class="container">
+                <h2 class="section-title">Conclusion</h2>
+                <p class="conclusion-text">The HARK project has successfully delivered a high-impact, technically sophisticated solution to a common problem faced by the hearing impaired community. By prioritizing low-latency performance, robust architecture, and accessibility, the application stands as a testament to the power of leveraging existing consumer technology for assistive purposes. HARK is more than just an application; it is a significant step toward democratizing access to essential hearing assistance, offering a powerful, cost-effective, and convenient alternative to proprietary hardware.</p>
+
+                <div class="quote">
+                    <blockquote>
+                        "The foundation is now set for future enhancements, particularly in advanced DSP and cross-platform compatibility, which will further solidify HARK's position as a leading tool in mobile assistive technology."
+                    </blockquote>
+                    <cite>— Project Review Board</cite>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-ear-listen"></i>
+                    <span>HARK</span>
+                </div>
+                <p>&copy; 2024 Hearing Aid Relay Kit. Prepared by Manus AI for DCOM Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
